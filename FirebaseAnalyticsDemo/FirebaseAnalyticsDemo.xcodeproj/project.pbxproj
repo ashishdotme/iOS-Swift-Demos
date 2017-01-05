@@ -8,24 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		090642D51E1E6ED000BAF5FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090642D41E1E6ED000BAF5FD /* AppDelegate.swift */; };
-		090642D71E1E6ED000BAF5FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090642D61E1E6ED000BAF5FD /* ViewController.swift */; };
 		090642DA1E1E6ED000BAF5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090642D81E1E6ED000BAF5FD /* Main.storyboard */; };
 		090642DC1E1E6ED000BAF5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090642DB1E1E6ED000BAF5FD /* Assets.xcassets */; };
 		090642DF1E1E6ED000BAF5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090642DD1E1E6ED000BAF5FD /* LaunchScreen.storyboard */; };
 		090642E71E1E72CF00BAF5FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 090642E61E1E72CE00BAF5FD /* GoogleService-Info.plist */; };
+		7561F5B01E1ED30C00736FD6 /* DoctorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561F5AF1E1ED30C00736FD6 /* DoctorTableVC.swift */; };
+		7561F5B21E1ED91700736FD6 /* BookAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561F5B11E1ED91700736FD6 /* BookAppointmentVC.swift */; };
+		7561F5B81E1EDE6900736FD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561F5B71E1EDE6900736FD6 /* Constants.swift */; };
+		7561F5BA1E1EED6A00736FD6 /* PatientTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561F5B91E1EED6A00736FD6 /* PatientTableVC.swift */; };
+		7561F5BD1E1EF04000736FD6 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561F5BC1E1EF04000736FD6 /* PatientModel.swift */; };
 		8A58171F744CB049F0791533 /* Pods_FirebaseAnalyticsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED7E44F75F27CB393647D11 /* Pods_FirebaseAnalyticsDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		090642D11E1E6ED000BAF5FD /* FirebaseAnalyticsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAnalyticsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		090642D41E1E6ED000BAF5FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		090642D61E1E6ED000BAF5FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		090642D91E1E6ED000BAF5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		090642DB1E1E6ED000BAF5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		090642DE1E1E6ED000BAF5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		090642E01E1E6ED000BAF5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090642E61E1E72CE00BAF5FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3ED7E44F75F27CB393647D11 /* Pods_FirebaseAnalyticsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAnalyticsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7561F5AF1E1ED30C00736FD6 /* DoctorTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorTableVC.swift; sourceTree = "<group>"; };
+		7561F5B11E1ED91700736FD6 /* BookAppointmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookAppointmentVC.swift; sourceTree = "<group>"; };
+		7561F5B71E1EDE6900736FD6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7561F5B91E1EED6A00736FD6 /* PatientTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientTableVC.swift; sourceTree = "<group>"; };
+		7561F5BC1E1EF04000736FD6 /* PatientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		A83EED2027B3130D94AA50B3 /* Pods-FirebaseAnalyticsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAnalyticsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseAnalyticsDemo/Pods-FirebaseAnalyticsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CCAD79C9FB63517267B9E904 /* Pods-FirebaseAnalyticsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAnalyticsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseAnalyticsDemo/Pods-FirebaseAnalyticsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,13 +71,11 @@
 		090642D31E1E6ED000BAF5FD /* FirebaseAnalyticsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				090642D41E1E6ED000BAF5FD /* AppDelegate.swift */,
-				090642D61E1E6ED000BAF5FD /* ViewController.swift */,
-				090642D81E1E6ED000BAF5FD /* Main.storyboard */,
-				090642DB1E1E6ED000BAF5FD /* Assets.xcassets */,
-				090642DD1E1E6ED000BAF5FD /* LaunchScreen.storyboard */,
-				090642E01E1E6ED000BAF5FD /* Info.plist */,
-				090642E61E1E72CE00BAF5FD /* GoogleService-Info.plist */,
+				7561F5BB1E1EF01900736FD6 /* Model */,
+				7561F5B41E1EDE2600736FD6 /* Constants */,
+				7561F5AC1E1ED2A600736FD6 /* Controllers */,
+				7561F5AA1E1ECF2400736FD6 /* Initials */,
+				7561F5AB1E1ECF3200736FD6 /* Layout */,
 			);
 			path = FirebaseAnalyticsDemo;
 			sourceTree = "<group>";
@@ -81,6 +87,52 @@
 				A83EED2027B3130D94AA50B3 /* Pods-FirebaseAnalyticsDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7561F5AA1E1ECF2400736FD6 /* Initials */ = {
+			isa = PBXGroup;
+			children = (
+				090642D41E1E6ED000BAF5FD /* AppDelegate.swift */,
+				090642DB1E1E6ED000BAF5FD /* Assets.xcassets */,
+				090642E01E1E6ED000BAF5FD /* Info.plist */,
+				090642E61E1E72CE00BAF5FD /* GoogleService-Info.plist */,
+			);
+			name = Initials;
+			sourceTree = "<group>";
+		};
+		7561F5AB1E1ECF3200736FD6 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				090642D81E1E6ED000BAF5FD /* Main.storyboard */,
+				090642DD1E1E6ED000BAF5FD /* LaunchScreen.storyboard */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		7561F5AC1E1ED2A600736FD6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7561F5AF1E1ED30C00736FD6 /* DoctorTableVC.swift */,
+				7561F5B11E1ED91700736FD6 /* BookAppointmentVC.swift */,
+				7561F5B91E1EED6A00736FD6 /* PatientTableVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7561F5B41E1EDE2600736FD6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7561F5B71E1EDE6900736FD6 /* Constants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		7561F5BB1E1EF01900736FD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7561F5BC1E1EF04000736FD6 /* PatientModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		CE84AA9A09E2295A55D1AE53 /* Frameworks */ = {
@@ -216,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090642D71E1E6ED000BAF5FD /* ViewController.swift in Sources */,
+				7561F5B01E1ED30C00736FD6 /* DoctorTableVC.swift in Sources */,
+				7561F5BD1E1EF04000736FD6 /* PatientModel.swift in Sources */,
+				7561F5BA1E1EED6A00736FD6 /* PatientTableVC.swift in Sources */,
 				090642D51E1E6ED000BAF5FD /* AppDelegate.swift in Sources */,
+				7561F5B21E1ED91700736FD6 /* BookAppointmentVC.swift in Sources */,
+				7561F5B81E1EDE6900736FD6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 977LY923S7;
 				INFOPLIST_FILE = FirebaseAnalyticsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ashish.FirebaseAnalyticsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 977LY923S7;
 				INFOPLIST_FILE = FirebaseAnalyticsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ashish.FirebaseAnalyticsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
