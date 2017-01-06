@@ -17,7 +17,8 @@ class BookAppointmentVC: UIViewController {
     @IBOutlet weak var doctorListPicker: UIPickerView!
     var doctorSelected: String? = ""
     var ref: FIRDatabaseReference!
-    
+    var bookedDate: String? = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +26,7 @@ class BookAppointmentVC: UIViewController {
         doctorListPicker.delegate = self
         doctorListPicker.dataSource = self
         doctorSelected = Doctors.doctorList[0]
-
+        bookedDate = Date().simpleDateKey()
         //firebase ref
         ref = FIRDatabase.database().reference()
     }
@@ -41,9 +42,20 @@ class BookAppointmentVC: UIViewController {
         let name = nameTextField.text
         let age = ageTextField.text
         let disease = diseaseTextField.text
-        let details: Dictionary = ["name":name!, "age":age!, "disease":disease!]
-        self.ref.child("appointments").child(doctorSelected!.toBase64()).child(name!.toBase64()).setValue(details)
+        let bookingDate: String? = bookedDate
+        let details: Dictionary = ["name":name!, "age":age!, "disease":disease!, "bookingDate": bookingDate!]
+        self.ref.child("appointments").child("\(doctorSelected!.toBase64())").child(name!.toBase64()).setValue(details) { (error, ref) -> Void in
+            let alertController = UIAlertController(title: "Success", message: "Added patient data successfully", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
+
+    @IBAction func bookingDateChanged(_ sender: UIDatePicker) {
+        bookedDate = sender.date.simpleDateKey()
+    }
+
 
     /*
     // MARK: - Navigation

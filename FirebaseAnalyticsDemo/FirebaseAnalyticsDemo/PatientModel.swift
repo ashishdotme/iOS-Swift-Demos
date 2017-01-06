@@ -14,11 +14,13 @@ class PatientModel: NSObject {
     var name : String
     var age: String
     var disease : String
+    var bookingDate: String
     
-    init(name: String, age: String, disease: String) {
+    init(name: String, age: String, disease: String, bookingDate: String) {
         self.name = name
         self.age = age
         self.disease = disease
+        self.bookingDate = bookingDate
     }
     
 //    init(snapshot: FIRDataSnapshot) {

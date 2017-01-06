@@ -8,15 +8,16 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class PatientTableVC: UIViewController {
     @IBOutlet weak var patientTable: UITableView!
-    var ref: FIRDatabaseReference!
+    @IBOutlet weak var bookingDatePicker: UIDatePicker!
+    var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("appointments")
     var patientList: [PatientModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Doctors.doctorId)
-        ref = FIRDatabase.database().reference()
+
 //        ref.child("appointments").child(Doctors.doctorId!.toBase64()).observe(.value, with: { snapshot in
 //            for child in snapshot.children {
 //                let patient = (child as AnyObject) as? NSDictionary
@@ -29,7 +30,7 @@ class PatientTableVC: UIViewController {
 //                })
 //            }
 //        })
-        ref.child("appointments").child(Doctors.doctorId!.toBase64()).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(Doctors.doctorId!.toBase64()).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             for child in snapshot.children {
                 print(child)
@@ -39,7 +40,8 @@ class PatientTableVC: UIViewController {
                 let name = patient["name"] as? String ?? ""
                 let age = patient["age"] as? String ?? ""
                 let disease = patient["disease"] as? String ?? ""
-                self.patientList.append(PatientModel(name: name, age: age, disease: disease))
+                let bookingDate = patient["bookingDate"] as? String ?? ""
+                self.patientList.append(PatientModel(name: name, age: age, disease: disease, bookingDate: bookingDate))
                 DispatchQueue.main.async(execute: { () -> Void in
                      self.patientTable.reloadData()
                 })
@@ -55,7 +57,54 @@ class PatientTableVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    @IBAction func bookingDateChanged(_ sender: UIDatePicker) {
+        let selectedDate = sender.date.simpleDateKey()
+        let selectedDatePlusOneDay = sender.date.dateByAdding(delta: 1).simpleDateKey()
+        print(selectedDate)
+        print(selectedDatePlusOneDay)
+        ref.child(Doctors.doctorId!.toBase64()).queryOrdered(byChild: "bookingDate").queryStarting(atValue: selectedDate).queryEnding(atValue: selectedDate).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            self.patientList = []
+            if snapshot.childrenCount > 0 {
+                for child in snapshot.children {
+                    print(child)
+                    let patientNames: FIRDataSnapshot = child as! FIRDataSnapshot
+                    let patient = patientNames.value as! NSDictionary
+                    //let patient = child as! Dictionary<String, AnyObject>
+                    let name = patient["name"] as? String ?? ""
+                    let age = patient["age"] as? String ?? ""
+                    let disease = patient["disease"] as? String ?? ""
+                    let bookingDate = patient["bookingDate"] as? String ?? ""
+                    self.patientList.append(PatientModel(name: name, age: age, disease: disease, bookingDate: bookingDate))
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        self.patientTable.reloadData()
+                    })
+                }
+            } else {
+                self.patientList = []
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.patientTable.reloadData()
+                })
+
+            }
+
+
+
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+            
+        }
+
+
+    }
+
+    private func format(myTimeStamp: TimeInterval) -> String {
+        let date = NSDate(timeIntervalSince1970:myTimeStamp/1000)
+        return date.dateStringWithFormat(format: "EEE, d MMM yyyy HH:mm:ss")
+    }
+
 
     /*
     // MARK: - Navigation
@@ -81,10 +130,22 @@ extension PatientTableVC: UITableViewDelegate, UITableViewDataSource {
         // Adding the right informations
         let patient = patientList[indexPath.row]
         cell.textLabel?.text = patient.name
-        cell.detailTextLabel?.text = patient.disease
-        
-        // Returning the cell
+        cell.detailTextLabel?.text = patient.bookingDate       // Returning the cell
         return cell
     }
     
+}
+
+extension NSDate {
+    func dateStringWithFormat(format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self as Date)
+    }
+}
+
+extension Date {
+    func add(minutes: Int) -> Date {
+        return Calendar(identifier: .gregorian).date(byAdding: .minute, value: minutes, to: self)!
+    }
 }
