@@ -89,9 +89,6 @@ class PatientTableVC: UIViewController {
 
             }
 
-
-
-            // ...
         }) { (error) in
             print(error.localizedDescription)
             
